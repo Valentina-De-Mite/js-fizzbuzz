@@ -15,16 +15,27 @@ BONUS 2:
 Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a seconda che il valore inserito sia un numero, un fizz, un buzz o un fizzbuzz. Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.
 */
 
+const container = document.getElementById("container");
+
 for (let i = 1; i < 101; i++) {
+  let element = document.createElement("div");
+  element.className = "number";
+
   if (i % 15 === 0) {
-    console.log("Fizz-Buzz");
+    console.log("FizzBuzz");
+    element.innerText = "FizzBuzz";
+    container.append(element);
   } else if (i % 3 === 0) {
     console.log("Fizz");
+    element.innerText = "Fizz";
+    container.append(element);
   } else if (i % 5 === 0) {
     console.log("Buzz");
+    element.innerText = "Buzz";
+    container.append(element);
   } else {
     console.log(i);
+    element.innerText = i;
+    container.append(element);
   }
 }
-
-// Strumenti
